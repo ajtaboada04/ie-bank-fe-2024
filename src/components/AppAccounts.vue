@@ -25,6 +25,7 @@
               <tr>
                 <th scope="col">Account Name</th>
                 <th scope="col">Account Number</th>
+                <th scope="col">Account Country</th> <!-- New Column -->
                 <th scope="col">Account Balance</th>
                 <th scope="col">Account Currency</th>
                 <th scope="col">Account Status</th>
@@ -106,6 +107,20 @@
               type="text"
               v-model="createAccountForm.currency"
               placeholder="$ or €"
+              required
+            >
+            </b-form-input>
+          </b-form-group>
+          <b-form-group
+            id="form-name-group"
+            label="Country:"
+            label-for="form-country-iput"
+          >
+            <b-form-input
+              id="form-name-input"
+              type="text"
+              v-model="createAccountForm.country"
+              placeholder="Country"
               required
             >
             </b-form-input>
