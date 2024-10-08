@@ -36,6 +36,7 @@
               <tr v-for="account in accounts" :key="account.id">
                 <td>{{ account.name }}</td>
                 <td>{{ account.account_number }}</td>
+                <td>{{ account.country }}</td> <!-- New Column -->
                 <td>{{ account.balance }}</td>
                 <td>{{ account.currency }}</td>
                 <td>
@@ -171,6 +172,7 @@ export default {
       createAccountForm: {
         name: "",
         currency: "",
+        country: "",
       },
       editAccountForm: {
         id: "",
