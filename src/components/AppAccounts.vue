@@ -6,7 +6,7 @@
           <h1>Accounts</h1>
           <hr />
           <br />
-          <!-- Allert Message -->
+          <!-- Alert Message -->
           <b-alert v-if="showMessage" variant="success" show>{{
             message
           }}</b-alert>
@@ -25,20 +25,21 @@
               <tr>
                 <th scope="col">Account Name</th>
                 <th scope="col">Account Number</th>
-                <th scope="col">Account Country</th> <!-- New Column -->
                 <th scope="col">Account Balance</th>
                 <th scope="col">Account Currency</th>
+                <th scope="col">Country</th>
                 <th scope="col">Account Status</th>
                 <th scope="col">Actions</th>
+
               </tr>
             </thead>
             <tbody>
               <tr v-for="account in accounts" :key="account.id">
                 <td>{{ account.name }}</td>
                 <td>{{ account.account_number }}</td>
-                <td>{{ account.country }}</td> <!-- New Column -->
                 <td>{{ account.balance }}</td>
                 <td>{{ account.currency }}</td>
+                <td>{{ account.country }}</td>
                 <td>
                   <span
                     v-if="account.status == 'Active'"
@@ -113,12 +114,12 @@
             </b-form-input>
           </b-form-group>
           <b-form-group
-            id="form-name-group"
+            id="form-currency-group"
             label="Country:"
-            label-for="form-country-iput"
+            label-for="form-country-input"
           >
             <b-form-input
-              id="form-name-input"
+              id="form-country-input"
               type="text"
               v-model="createAccountForm.country"
               placeholder="Country"
